@@ -13,8 +13,9 @@ public class Main {
 	public static void newTweet() {
 		Twitter twitter = TwitterFactory.getSingleton();
 
-		String myTweet = "Hello Guys, how are you doing";
+		String myTweet = "Hello Guys. How are you doing?";
 		try {
+			twitter.verifyCredentials();
 			Status status = twitter.updateStatus(myTweet);
 			System.out.println("Success");
 		} catch (TwitterException e) {
